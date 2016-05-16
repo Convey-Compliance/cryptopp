@@ -84,8 +84,8 @@ int CompareNoCase(const SecByteBlock& first, const SecByteBlock& second)
     
     // Same size... compare them....
     SecByteBlock t1(first), t2(second);
-    std::transform(t1.begin(), t1.end(), t1.begin(), (int(*)(int))std::tolower);
-    std::transform(t2.begin(), t2.end(), t2.begin(), (int(*)(int))std::tolower);
+    std::transform(t1.begin(), t1.end(), t1.begin(), (byte(*)(byte))std::tolower);
+    std::transform(t2.begin(), t2.end(), t2.begin(), (byte(*)(byte))std::tolower);
     
     return std::memcmp(t1.begin(), t2.begin(), t2.size());
 }
